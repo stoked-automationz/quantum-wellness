@@ -1,0 +1,389 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ─── QWW Design Tokens ─── */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  /* QWW Brand Colors */
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-cinzel);
+  --font-mono: var(--font-jetbrains);
+
+  --color-obsidian: #0A0A0A;
+  --color-volcanic-ash: #1A1A1A;
+  --color-quantum-gold: #D4AF37;
+  --color-forge-red: #8B1A1A;
+  --color-quantum-cyan: #00D4FF;
+  --color-white-fire: #FFFFFF;
+  --color-silver-mist: #E0E0E0;
+}
+
+/* QWW is dark-mode only — we define everything at :root */
+:root {
+  --radius: 0.625rem;
+
+  /* Dark mode as default (the only mode) */
+  --background: #0A0A0A;
+  --foreground: #FFFFFF;
+  --card: #1A1A1A;
+  --card-foreground: #FFFFFF;
+  --popover: #1A1A1A;
+  --popover-foreground: #FFFFFF;
+  --primary: #D4AF37;
+  --primary-foreground: #0A0A0A;
+  --secondary: #1A1A1A;
+  --secondary-foreground: #E0E0E0;
+  --muted: #1A1A1A;
+  --muted-foreground: #A0A0A0;
+  --accent: #8B1A1A;
+  --accent-foreground: #FFFFFF;
+  --destructive: #DC2626;
+  --border: rgba(212, 175, 55, 0.15);
+  --input: rgba(255, 255, 255, 0.1);
+  --ring: #D4AF37;
+  --chart-1: #D4AF37;
+  --chart-2: #00D4FF;
+  --chart-3: #8B1A1A;
+  --chart-4: #E0E0E0;
+  --chart-5: #A0A0A0;
+  --sidebar: #0A0A0A;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #D4AF37;
+  --sidebar-primary-foreground: #0A0A0A;
+  --sidebar-accent: #1A1A1A;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: rgba(212, 175, 55, 0.15);
+  --sidebar-ring: #D4AF37;
+}
+
+/* No light mode — .dark class uses same values for consistency with shadcn components */
+.dark {
+  --background: #0A0A0A;
+  --foreground: #FFFFFF;
+  --card: #1A1A1A;
+  --card-foreground: #FFFFFF;
+  --popover: #1A1A1A;
+  --popover-foreground: #FFFFFF;
+  --primary: #D4AF37;
+  --primary-foreground: #0A0A0A;
+  --secondary: #1A1A1A;
+  --secondary-foreground: #E0E0E0;
+  --muted: #1A1A1A;
+  --muted-foreground: #A0A0A0;
+  --accent: #8B1A1A;
+  --accent-foreground: #FFFFFF;
+  --destructive: #DC2626;
+  --border: rgba(212, 175, 55, 0.15);
+  --input: rgba(255, 255, 255, 0.1);
+  --ring: #D4AF37;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-cinzel), serif;
+  }
+
+  /* Selection colors */
+  ::selection {
+    background: rgba(212, 175, 55, 0.3);
+    color: #FFFFFF;
+  }
+}
+
+/* ─── QWW Custom Utilities ─── */
+
+/* Forge Gradient: Deep Ember → Fire → Molten Gold (volcanic, NOT rainbow) */
+.forge-gradient {
+  background: linear-gradient(135deg, #4A0E0E 0%, #8B1A1A 30%, #C4601D 60%, #D4AF37 100%);
+}
+
+.forge-gradient-text {
+  background: linear-gradient(135deg, #8B1A1A 0%, #C4601D 40%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.forge-gradient-border {
+  border-image: linear-gradient(135deg, #4A0E0E 0%, #8B1A1A 30%, #C4601D 60%, #D4AF37 100%) 1;
+}
+
+/* ─── Flame hover effect for "Forge" text ─── */
+.forge-flame {
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.forge-flame::before {
+  content: "";
+  position: absolute;
+  inset: -4px -8px;
+  background: radial-gradient(ellipse at bottom, rgba(196, 96, 29, 0.4) 0%, rgba(139, 26, 26, 0.2) 40%, transparent 70%);
+  filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.forge-flame:hover::before {
+  opacity: 1;
+}
+
+.forge-flame:hover {
+  text-shadow:
+    0 0 10px rgba(212, 175, 55, 0.6),
+    0 0 20px rgba(196, 96, 29, 0.4),
+    0 0 40px rgba(139, 26, 26, 0.3),
+    0 -5px 15px rgba(212, 175, 55, 0.2);
+}
+
+/* Animated ember particles on hover */
+.forge-flame::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  height: 120%;
+  transform: translateX(-50%);
+  background-image:
+    radial-gradient(1px 1px at 20% 80%, #D4AF37 50%, transparent 100%),
+    radial-gradient(1px 1px at 40% 60%, #C4601D 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 60% 70%, #D4AF37 50%, transparent 100%),
+    radial-gradient(1px 1px at 80% 90%, #8B1A1A 50%, transparent 100%),
+    radial-gradient(1px 1px at 30% 50%, #C4601D 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 70% 40%, #D4AF37 50%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.forge-flame:hover::after {
+  opacity: 1;
+  animation: ember-rise 1.5s ease-out infinite;
+}
+
+@keyframes ember-rise {
+  0% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-20px);
+    opacity: 0;
+  }
+}
+
+/* Shiny/shimmer effect on hover for flagship elements */
+.shimmer-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-hover::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    115deg,
+    transparent 20%,
+    rgba(212, 175, 55, 0.15) 40%,
+    rgba(212, 175, 55, 0.3) 50%,
+    rgba(212, 175, 55, 0.15) 60%,
+    transparent 80%
+  );
+  transform: translateX(-100%) rotate(0deg);
+  transition: none;
+  pointer-events: none;
+}
+
+.shimmer-hover:hover::after {
+  animation: shimmer-sweep 0.8s ease-out;
+}
+
+@keyframes shimmer-sweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Gold glow effect for CTAs */
+.gold-glow {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3), 0 0 40px rgba(212, 175, 55, 0.1);
+}
+
+.gold-glow:hover {
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.5), 0 0 60px rgba(212, 175, 55, 0.2);
+}
+
+/* Sacred geometry decorative pattern */
+.sacred-geometry-bg {
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(196, 96, 29, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(139, 26, 26, 0.02) 0%, transparent 50%);
+}
+
+/* Volcanic texture overlay */
+.volcanic-texture {
+  position: relative;
+}
+
+.volcanic-texture::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(139, 26, 26, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* ─── Wind swirl effect for Breath Circle ─── */
+.wind-swirl {
+  position: relative;
+  display: inline-block;
+}
+
+.wind-swirl::before,
+.wind-swirl::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  border: 1px solid transparent;
+}
+
+/* Outer swirl ring */
+.wind-swirl::before {
+  inset: -18px -24px;
+  border-top-color: rgba(0, 212, 255, 0.4);
+  border-right-color: rgba(0, 212, 255, 0.15);
+  animation: wind-orbit 3s linear infinite;
+  filter: blur(1px);
+}
+
+/* Inner swirl ring */
+.wind-swirl::after {
+  inset: -10px -16px;
+  border-bottom-color: rgba(0, 212, 255, 0.3);
+  border-left-color: rgba(0, 212, 255, 0.1);
+  animation: wind-orbit 2.2s linear infinite reverse;
+  filter: blur(0.5px);
+}
+
+@keyframes wind-orbit {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Wind particles floating around the text */
+.wind-particles {
+  position: relative;
+  display: inline-block;
+}
+
+.wind-particles::before {
+  content: "";
+  position: absolute;
+  inset: -30px -40px;
+  background-image:
+    radial-gradient(1.5px 1.5px at 15% 30%, rgba(0, 212, 255, 0.6) 50%, transparent 100%),
+    radial-gradient(1px 1px at 85% 20%, rgba(0, 212, 255, 0.4) 50%, transparent 100%),
+    radial-gradient(2px 2px at 70% 80%, rgba(0, 212, 255, 0.5) 50%, transparent 100%),
+    radial-gradient(1px 1px at 25% 75%, rgba(0, 212, 255, 0.3) 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 50% 10%, rgba(0, 212, 255, 0.5) 50%, transparent 100%),
+    radial-gradient(1px 1px at 90% 60%, rgba(0, 212, 255, 0.4) 50%, transparent 100%);
+  animation: wind-drift 4s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes wind-drift {
+  0% { transform: translateX(-3px) rotate(0deg); opacity: 0.6; }
+  50% { transform: translateX(3px) rotate(2deg); opacity: 1; }
+  100% { transform: translateX(-3px) rotate(-1deg); opacity: 0.7; }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.5);
+}
