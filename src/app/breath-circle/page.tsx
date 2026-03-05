@@ -53,7 +53,7 @@ export default function BreathCirclePage() {
           </div>
           <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-white-fire tracking-wide leading-tight">
             Vital Breath{" "}
-            <span className="text-quantum-cyan wind-swirl wind-particles">Circle</span>
+            <span className="text-quantum-cyan breath-flame">Circle</span>
           </h1>
           <p className="mt-6 text-lg text-silver-mist/80 max-w-2xl mx-auto leading-relaxed">
             Your breath is the first and last thing you own. Learn to wield it.

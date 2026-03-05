@@ -299,70 +299,73 @@
   pointer-events: none;
 }
 
-/* ─── Wind swirl effect for Breath Circle ─── */
-.wind-swirl {
+/* ─── Breath flame glow effect for Breath Circle (cyan forge-flame) ─── */
+.breath-flame {
   position: relative;
   display: inline-block;
+  transition: all 0.3s ease;
 }
 
-.wind-swirl::before,
-.wind-swirl::after {
+.breath-flame::before {
   content: "";
   position: absolute;
-  pointer-events: none;
-  border-radius: 50%;
-  border: 1px solid transparent;
-}
-
-/* Outer swirl ring */
-.wind-swirl::before {
-  inset: -18px -24px;
-  border-top-color: rgba(0, 212, 255, 0.4);
-  border-right-color: rgba(0, 212, 255, 0.15);
-  animation: wind-orbit 3s linear infinite;
-  filter: blur(1px);
-}
-
-/* Inner swirl ring */
-.wind-swirl::after {
-  inset: -10px -16px;
-  border-bottom-color: rgba(0, 212, 255, 0.3);
-  border-left-color: rgba(0, 212, 255, 0.1);
-  animation: wind-orbit 2.2s linear infinite reverse;
-  filter: blur(0.5px);
-}
-
-@keyframes wind-orbit {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Wind particles floating around the text */
-.wind-particles {
-  position: relative;
-  display: inline-block;
-}
-
-.wind-particles::before {
-  content: "";
-  position: absolute;
-  inset: -30px -40px;
-  background-image:
-    radial-gradient(1.5px 1.5px at 15% 30%, rgba(0, 212, 255, 0.6) 50%, transparent 100%),
-    radial-gradient(1px 1px at 85% 20%, rgba(0, 212, 255, 0.4) 50%, transparent 100%),
-    radial-gradient(2px 2px at 70% 80%, rgba(0, 212, 255, 0.5) 50%, transparent 100%),
-    radial-gradient(1px 1px at 25% 75%, rgba(0, 212, 255, 0.3) 50%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 50% 10%, rgba(0, 212, 255, 0.5) 50%, transparent 100%),
-    radial-gradient(1px 1px at 90% 60%, rgba(0, 212, 255, 0.4) 50%, transparent 100%);
-  animation: wind-drift 4s ease-in-out infinite alternate;
+  inset: -4px -8px;
+  background: radial-gradient(ellipse at bottom, rgba(0, 212, 255, 0.4) 0%, rgba(0, 140, 200, 0.2) 40%, transparent 70%);
+  filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
   pointer-events: none;
   z-index: -1;
 }
 
-@keyframes wind-drift {
-  0% { transform: translateX(-3px) rotate(0deg); opacity: 0.6; }
-  50% { transform: translateX(3px) rotate(2deg); opacity: 1; }
-  100% { transform: translateX(-3px) rotate(-1deg); opacity: 0.7; }
+.breath-flame:hover::before {
+  opacity: 1;
+}
+
+.breath-flame:hover {
+  text-shadow:
+    0 0 10px rgba(0, 212, 255, 0.6),
+    0 0 20px rgba(0, 160, 220, 0.4),
+    0 0 40px rgba(0, 100, 180, 0.3),
+    0 -5px 15px rgba(0, 212, 255, 0.2);
+}
+
+/* Animated breath particles on hover */
+.breath-flame::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  height: 120%;
+  transform: translateX(-50%);
+  background-image:
+    radial-gradient(1px 1px at 20% 80%, #00D4FF 50%, transparent 100%),
+    radial-gradient(1px 1px at 40% 60%, #008CC8 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 60% 70%, #00D4FF 50%, transparent 100%),
+    radial-gradient(1px 1px at 80% 90%, #0064B4 50%, transparent 100%),
+    radial-gradient(1px 1px at 30% 50%, #008CC8 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 70% 40%, #00D4FF 50%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.breath-flame:hover::after {
+  opacity: 1;
+  animation: breath-rise 1.5s ease-out infinite;
+}
+
+@keyframes breath-rise {
+  0% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-20px);
+    opacity: 0;
+  }
 }
 
 /* Smooth scrolling */
