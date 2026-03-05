@@ -30,7 +30,7 @@ export function Hero() {
 
         {/* Headline */}
         <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white-fire tracking-wide leading-tight">
-          Hawaii&apos;s First Volcanic
+          Hawaii&apos;s Best Total
           <br />
           <span className="forge-flame forge-gradient-text">
             Transformational Center
