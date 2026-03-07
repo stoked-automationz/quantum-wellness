@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -24,13 +23,13 @@ export function Navbar() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center group">
-            <Image
-              src="/images/qww-logo.png"
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/qww-logo.svg"
               alt="Quantum Wellness Warrior"
               width={44}
               height={44}
               className="transition-opacity group-hover:opacity-80"
-              priority
             />
           </Link>
 

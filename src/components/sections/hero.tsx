@@ -23,13 +23,13 @@ export function Hero() {
       <div className="relative z-10 mx-auto max-w-5xl px-4 text-center">
         {/* Logo */}
         <div className="mb-8">
-          <Image
-            src="/images/qww-logo.png"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/qww-logo.svg"
             alt="Quantum Wellness Warrior"
             width={200}
             height={200}
             className="mx-auto"
-            priority
           />
         </div>
 
