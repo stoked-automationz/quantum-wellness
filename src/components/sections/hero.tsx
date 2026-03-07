@@ -21,11 +21,16 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-5xl px-4 text-center">
-        {/* Logo Name */}
+        {/* Logo */}
         <div className="mb-8">
-          <span className="text-quantum-gold text-2xl sm:text-3xl md:text-4xl font-heading font-bold tracking-[0.25em]">
-            Quantum Wellness Warrior
-          </span>
+          <Image
+            src="/images/qww-logo.png"
+            alt="Quantum Wellness Warrior"
+            width={200}
+            height={200}
+            className="mx-auto"
+            priority
+          />
         </div>
 
         {/* Headline */}

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -21,11 +22,16 @@ export function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-obsidian/90 backdrop-blur-md border-b border-quantum-gold/10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          {/* Omega Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <span className="font-heading text-3xl font-bold text-quantum-gold group-hover:text-quantum-gold/80 transition-colors leading-none">
-              &#937;
-            </span>
+          {/* Logo */}
+          <Link href="/" className="flex items-center group">
+            <Image
+              src="/images/qww-logo.png"
+              alt="Quantum Wellness Warrior"
+              width={44}
+              height={44}
+              className="transition-opacity group-hover:opacity-80"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}
