@@ -22,8 +22,9 @@ export function LandShowcase() {
             </h2>
 
             <p className="mt-6 text-silver-mist/80 leading-relaxed">
-              Five acres of raw volcanic earth on the slopes of Kīlauea —
-              Hawai&apos;i&apos;s most active volcano. Ancient Ōhi&apos;a
+              Six acres of raw volcanic earth on the slopes of Kīlauea —
+              Hawai&apos;i&apos;s most active volcano, adjacent to over 350,000
+              acres of Hawai&apos;i Volcanoes National Park. Ancient Ōhi&apos;a
               old-growth forest. Lava tubes that wind beneath the surface.
               Training grounds carved by millennia of eruption and renewal.
             </p>
@@ -37,7 +38,7 @@ export function LandShowcase() {
               {[
                 "Ancient Ōhi'a old-growth forest canopy",
                 "Lava tube cave system for meditation & breathwork",
-                "Ridge-line training ground with volcanic panorama",
+                "Volcanic Training Ground nestled next to over 550,000 acres of preserve",
                 "Permaculture food forest & regenerative gardens",
                 "Kumu-blessed ceremonial spaces",
               ].map((feature) => (

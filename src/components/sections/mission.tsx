@@ -14,7 +14,7 @@ export function Mission() {
         </h2>
 
         <p className="mt-8 text-lg text-silver-mist/80 leading-relaxed max-w-3xl mx-auto">
-          Quantum Wellness Warrior is a volcanic transformational center on
+          The Forge is a volcanic transformational wellness center on
           Hawaii&apos;s Big Island — built on ancient lava flows, surrounded by
           old-growth Ōhi&apos;a forest, and powered by the same primal energy
           that created these islands. This is where you come to be forged, not
@@ -32,7 +32,7 @@ export function Mission() {
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
             { value: "100%", label: "Substance-Free" },
-            { value: "5 acres", label: "Volcanic Land" },
+            { value: "6 acres", label: "Volcanic Land" },
             { value: "1-on-1", label: "Mentorship" },
             { value: "Kīlauea", label: "Active Volcano" },
           ].map((stat) => (

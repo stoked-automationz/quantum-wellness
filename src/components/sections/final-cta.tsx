@@ -38,7 +38,7 @@ export function FinalCta() {
         </div>
 
         <p className="mt-6 text-xs text-muted-foreground">
-          Limited to 4 apprentices per cohort. 100% substance-free.
+          Limited to 10–12 apprentices per cohort. 100% substance-free.
         </p>
       </div>
     </section>

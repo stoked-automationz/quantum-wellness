@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 export const metadata: Metadata = {
-  title: "Vital Breath Circle | Weekly Breathwork Training in Hilo, Hawaii",
+  title: "Vital Breath Circle | Biweekly Breathwork Training — Hawaii's Big Island",
   description:
-    "Join Quantum Wellness Warrior's weekly breathwork training — live from Hilo, Hawaii or from anywhere in the world. $33/month for unlimited access to live sessions and the full archive.",
+    "Join Quantum Wellness Warrior's biweekly breathwork training — from anywhere in the world on our international platform, or in person on the Big Island. $33/month for unlimited access.",
   keywords: [
     "breathwork training Hawaii",
     "breathwork class Hilo",
@@ -19,19 +19,19 @@ export const metadata: Metadata = {
 
 const features = [
   {
-    title: "Live Weekly Sessions",
+    title: "Live Biweekly Sessions",
     description:
-      "Every week, Amrit leads a live breathwork session from the volcanic land. Join in person in Hilo or stream from anywhere in the world.",
+      "Every two weeks, Amrit leads a live breathwork session from the volcanic land. Join from anywhere in the world on our international platform, or in person if you're on the Big Island.",
   },
   {
     title: "Full Archive Access",
     description:
-      "Every past session recorded and available on demand. Build your practice on your schedule with a library that grows every week.",
+      "Every past session recorded and available on demand. Build your practice on your schedule with a library that grows every two weeks.",
   },
   {
     title: "In-Person + Remote",
     description:
-      "Hilo locals can attend in person on the volcanic land. Remote members join via high-quality livestream. Same session, same energy.",
+      "Join from anywhere in the world on our international platform, or in person if you're on the Big Island. Same session, same energy.",
   },
   {
     title: "Community Connection",
@@ -48,7 +48,7 @@ export default function BreathCirclePage() {
         <div className="mx-auto max-w-4xl px-4 text-center">
           <div className="mb-6">
             <span className="inline-block border border-quantum-cyan/40 bg-quantum-cyan/10 px-5 py-1.5 text-xs uppercase tracking-[0.3em] text-quantum-cyan font-heading rounded-full shadow-[0_0_15px_rgba(0,212,255,0.15),0_0_30px_rgba(0,212,255,0.08)]">
-              Weekly Practice
+              Biweekly Practice
             </span>
           </div>
           <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-white-fire tracking-wide leading-tight">
@@ -57,8 +57,9 @@ export default function BreathCirclePage() {
           </h1>
           <p className="mt-6 text-lg text-silver-mist/80 max-w-2xl mx-auto leading-relaxed">
             Your breath is the first and last thing you own. Learn to wield it.
-            Weekly live breathwork training from Hawai&apos;i&apos;s volcanic
-            coast — join from Hilo or anywhere on Earth.
+            Biweekly live breathwork training from Hawai&apos;i&apos;s volcanic
+            coast — join from anywhere in the world on our international
+            platform, or in person if you&apos;re on the Big Island.
           </p>
           <div className="mt-10 flex items-center justify-center gap-2">
             <span className="font-mono text-4xl md:text-5xl font-bold text-quantum-cyan">
@@ -126,8 +127,8 @@ export default function BreathCirclePage() {
 
           <div className="mt-12 grid grid-cols-3 gap-8">
             {[
-              { value: "52+", label: "Sessions / Year" },
-              { value: "Live", label: "Every Week" },
+              { value: "26+", label: "Sessions / Year" },
+              { value: "Live", label: "Every Two Weeks" },
               { value: "∞", label: "Archive Access" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">

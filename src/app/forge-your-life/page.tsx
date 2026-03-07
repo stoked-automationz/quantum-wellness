@@ -30,7 +30,7 @@ const journeyStages = [
     title: "The Forge",
     subtitle: "Day 3–5: Breaking & Rebuilding",
     description:
-      "The fire begins. Daily sunrise breathwork on the ridge. Permaculture labor that puts your body in contact with the earth. Cave meditation in the lava tubes. One-on-one mentorship sessions that cut through decades of conditioning.",
+      "The fire begins. Daily sunrise breathwork on the Forge. Permaculture labor that puts your body in contact with the earth. Cave meditation in the lava tubes. One-on-one mentorship sessions that cut through decades of conditioning.",
   },
   {
     stage: "03",
@@ -51,7 +51,7 @@ const journeyStages = [
 const included = [
   "7 nights volcanic land accommodation",
   "All meals — whole-food, plant-forward, locally sourced",
-  "Daily sunrise breathwork sessions on the ridge",
+  "Daily sunrise breathwork sessions on the Forge",
   "One-on-one mentorship with Amrit",
   "Permaculture hands-on training",
   "Lava tube cave meditation sessions",
@@ -87,7 +87,7 @@ export default function ForgeYourLifePage() {
             </span>
           </div>
           <p className="mt-2 text-sm text-muted-foreground">
-            Or 5 payments of $1,111 &middot; Limited to 4 per cohort
+            Or 5 payments of $1,111 &middot; Limited to 10–12 per cohort
           </p>
         </div>
       </section>
@@ -274,7 +274,7 @@ export default function ForgeYourLifePage() {
           </h2>
           <p className="mt-6 text-silver-mist/80 leading-relaxed max-w-2xl mx-auto">
             Every Forge Your Life cohort includes a blessing ceremony led by a
-            kumu (Hawaiian cultural practitioner). We operate on this land not as
+            kumu (Hawaiian cultural practitioner). We operate on this land not only as
             owners but as stewards, honoring the traditions of the people who
             have called these volcanic slopes home for centuries.
           </p>
@@ -295,7 +295,7 @@ export default function ForgeYourLifePage() {
             <span className="forge-flame forge-gradient-text">The Forge</span>
           </h2>
           <p className="mt-6 text-silver-mist/80 leading-relaxed max-w-xl mx-auto">
-            Limited to 4 apprentices per cohort. 100% substance-free.
+            Apply now — limited to 10 to 12 apprentices per cohort. 100% substance-free.
             Application required — this is not a booking, it&apos;s a commitment.
           </p>
           <div className="mt-10">

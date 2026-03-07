@@ -21,10 +21,10 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-5xl px-4 text-center">
-        {/* Omega Symbol */}
+        {/* Logo Name */}
         <div className="mb-8">
-          <span className="text-quantum-gold text-7xl md:text-8xl font-heading font-bold tracking-widest">
-            &#937;
+          <span className="text-quantum-gold text-2xl sm:text-3xl md:text-4xl font-heading font-bold tracking-[0.25em]">
+            Quantum Wellness Warrior
           </span>
         </div>
 

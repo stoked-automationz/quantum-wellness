@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "The Forge | Volcanic Training Ground on Hawaii's Big Island",
   description:
-    "Explore the volcanic land that is Quantum Wellness Warrior's training ground — 5 acres of raw earth on Kīlauea's slopes, ancient Ōhi'a forest, lava tube caves, and permaculture gardens.",
+    "Explore the volcanic land that is Quantum Wellness Warrior's training ground — 6 acres of raw earth on Kīlauea's slopes, ancient Ōhi'a forest, lava tube caves, and permaculture gardens.",
   keywords: [
     "volcanic land Hawaii",
     "Big Island property",
@@ -19,30 +19,30 @@ export const metadata: Metadata = {
 
 const landmarks = [
   {
-    title: "The Ridge",
+    title: "Epic Hiking Grounds",
     description:
-      "The highest point on the property. Sunrise breathwork happens here — with a panoramic view of the volcanic landscape stretching to the coast. On clear mornings, you can see Mauna Kea and Mauna Loa simultaneously.",
+      "Less than 5 minutes away from one of the most private trails to access the vast preserve. Direct access to the cave. Mauna Loa National Park and Volcanoes National Park have countless trails to choose from.",
     image: "/images/sunrise/predawn-lava-flow-sunrise.jpg",
     alt: "Pre-dawn volcanic landscape with warm glow on the horizon",
   },
   {
     title: "Ancient Ōhi'a Forest",
     description:
-      "Old-growth Ōhi'a lehua trees — some over a century old — form a living cathedral on the property. Sacred to Hawaiian culture, these trees are survivors. They teach resilience by existing.",
+      "Old-growth Ōhi'a lehua trees — some over a century old — form a living cathedral on the property, alongside the rare and ancient Hāpu'u fern. A legitimately Jurassic forest. Sacred to Hawaiian culture, these trees are survivors. They teach resilience by existing.",
     image: "/images/forest/ohia-lehua-on-lava.jpg",
     alt: "ʻŌhiʻa lehua tree with red blossoms growing on dark volcanic lava rock",
   },
   {
     title: "The Cave",
     description:
-      "A lava tube system beneath the property. Used for meditation, breathwork, and the silence practices that are part of every Forge Your Life cohort. In complete darkness, underground, there is nowhere to hide from yourself.",
+      "A vast lava tube system beneath the property. Used for meditation, breathwork, and the silence practices that are part of every Forge Your Life cohort. With three entrances, we still haven't found the end of this cave system. In complete darkness, underground, there is nowhere to hide from yourself.",
     image: "/images/lava-tubes/dark-lava-tube-interior.jpg",
     alt: "Dark lava tube cave interior with textured volcanic rock walls",
   },
   {
     title: "The Training Ground",
     description:
-      "An open clearing where physical training, movement practice, and outdoor work sessions take place. Raw volcanic earth underfoot. No mirrors, no machines — just the body and the land.",
+      "A vital, open campus — a sanctuary for physical training, movement, and outdoor work. Raw volcanic earth underfoot. No mirrors, no machines — just the body and the land.",
     image: "/images/sunrise/haleakala-silhouette-clouds.jpg",
     alt: "Silhouette of person standing above the clouds at volcanic summit",
   },
@@ -56,7 +56,7 @@ const landmarks = [
   {
     title: "Ceremonial Space",
     description:
-      "A kumu-blessed area used for opening and closing ceremonies, community gatherings, and the culminating rite of passage that ends each Forge Your Life cohort.",
+      "A Kahiko Kumu — an ancient form of hula tied to deep spiritual beliefs, genealogy, and the raw natural kingdom. Using instruments and rigid symbolic movements to create transformation through communion with nature and the natural ways. This kumu-blessed space is used for opening and closing ceremonies, community gatherings, and the culminating rite of passage that ends each Forge Your Life cohort.",
     image: "/images/forest/tropical-canopy-lookup.jpg",
     alt: "Looking up through tropical forest canopy with light filtering through leaves",
   },
@@ -72,7 +72,8 @@ export default function TheForgePage() {
             The <span className="forge-flame forge-gradient-text">Forge</span>
           </h1>
           <p className="mt-6 text-lg text-silver-mist/80 max-w-2xl mx-auto leading-relaxed">
-            Five acres of raw volcanic earth on the slopes of Kīlauea. Ancient
+            Six acres of raw volcanic earth on the slopes of Kīlauea, adjacent
+            to over 350,000 acres of Hawai&apos;i Volcanoes National Park. Ancient
             forest. Lava tubes. Training grounds carved by eruption and renewal.
             This is where transformation happens — not in a conference room, but
             on the living body of the planet.
@@ -101,7 +102,7 @@ export default function TheForgePage() {
             {[
               { src: "/images/forest/olaa-forest.jpg", alt: "Dense ōhiʻa rainforest canopy at Olaʻa Forest", label: "Ōhi'a forest canopy" },
               { src: "/images/lava-tubes/thurston-lava-tube-interior.jpg", alt: "Warm-lit interior of Thurston Lava Tube", label: "Lava tube entrance" },
-              { src: "/images/sunrise/haleakala-sunrise-clouds.jpg", alt: "Volcanic ridge sunrise above the clouds", label: "Ridge sunrise view" },
+              { src: "/images/sunrise/haleakala-sunrise-clouds.jpg", alt: "Volcanic landscape with epic hiking grounds above the clouds", label: "Epic hiking grounds" },
             ].map((img) => (
               <div
                 key={img.label}
@@ -182,7 +183,7 @@ export default function TheForgePage() {
             Stewardship, Not <span className="text-quantum-gold">Ownership</span>
           </h2>
           <p className="mt-6 text-silver-mist/80 leading-relaxed">
-            We are not the owners of this land. We are its current stewards.
+            We are not only owners of this land — we are its current stewards.
             Every structure we build, every garden we plant, every path we clear
             is done with the understanding that we are guests on ancient ground
             — and that the land will outlast every one of us.

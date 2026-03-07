@@ -23,11 +23,11 @@ const allPrograms = [
   },
   {
     title: "Vital Breath Circle",
-    subtitle: "Weekly Breathwork Training",
+    subtitle: "Biweekly Breathwork Training",
     price: "$33/mo",
     duration: "Ongoing",
     description:
-      "Weekly live breathwork sessions from Hilo or anywhere in the world. Full archive access. Build your practice one breath at a time.",
+      "Biweekly live breathwork sessions — join from anywhere in the world on our international platform, or in person if you're on the Big Island. Full archive access.",
     href: "/breath-circle",
     cta: "Join the Circle",
     featured: false,

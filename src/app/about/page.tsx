@@ -58,14 +58,14 @@ export default function AboutPage() {
                 on the Big Island. Not to retire. To build.
               </p>
               <p className="text-silver-mist/80 leading-relaxed">
-                The volcanic land chose him as much as he chose it. Five acres
+                The volcanic land chose him as much as he chose it. Six acres
                 of raw earth on the slopes of Kīlauea, surrounded by ancient
                 Ōhi&apos;a forest, with lava tubes threading beneath the surface
                 like the island&apos;s own nervous system. This wasn&apos;t a
                 place for a wellness resort. It was a forge.
               </p>
               <p className="text-silver-mist/80 leading-relaxed">
-                Quantum Wellness Warrior was born from a simple conviction: real
+                The Forge was born from a simple conviction: real
                 transformation requires real challenge. Not a vacation with yoga.
                 Not a seminar with a workbook. A rite of passage — ancient in
                 form, modern in method, and relentless in its demand that you
@@ -76,20 +76,43 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission */}
+      {/* Quantum Wellness Warrior Mission */}
       <section className="py-24 md:py-32 sacred-geometry-bg">
         <div className="mx-auto max-w-4xl px-4 text-center">
           <div className="mb-8">
             <div className="h-px w-16 mx-auto forge-gradient" />
           </div>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-white-fire tracking-wide">
-            The <span className="text-quantum-gold">Mission</span>
+            Quantum Wellness Warrior{" "}
+            <span className="text-quantum-gold">Mission</span>
           </h2>
           <blockquote className="mt-8 text-xl md:text-2xl text-silver-mist/90 leading-relaxed italic max-w-3xl mx-auto font-heading">
             &ldquo;To build an institution — not a business — where human beings
             are forged through direct contact with volcanic earth, honest
             mentorship, and the ancient rite of passage that modern life has
             abandoned.&rdquo;
+          </blockquote>
+          <p className="mt-6 text-sm text-quantum-gold/70">— Amrit, Founder</p>
+        </div>
+      </section>
+
+      {/* Vital Sanctuaries Mission */}
+      <section className="py-24 md:py-32 bg-volcanic-ash/30">
+        <div className="mx-auto max-w-4xl px-4 text-center">
+          <div className="mb-8">
+            <div className="h-px w-16 mx-auto forge-gradient" />
+          </div>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-white-fire tracking-wide">
+            Vital Sanctuaries{" "}
+            <span className="text-quantum-gold">Mission</span>
+          </h2>
+          <blockquote className="mt-8 text-xl md:text-2xl text-silver-mist/90 leading-relaxed italic max-w-3xl mx-auto font-heading">
+            &ldquo;As the Quantum Wellness Warrior, I bridge ancient wisdom with
+            modern science. My mission is to build Vital Sanctuaries — rooted
+            physical locations wired to global networks — where communities
+            embody philosophy through deep emotional work and radical play,
+            demonstrating grassroots action for the liberation of all
+            beings.&rdquo;
           </blockquote>
           <p className="mt-6 text-sm text-quantum-gold/70">— Amrit, Founder</p>
         </div>

@@ -16,10 +16,10 @@ const programs = [
   },
   {
     title: "Vital Breath Circle",
-    subtitle: "Weekly Breathwork Training",
+    subtitle: "Biweekly Breathwork Training",
     price: "$33/mo",
     description:
-      "Weekly live breathwork sessions — join from Hilo or anywhere in the world. Access the full archive of past sessions. Build your practice one breath at a time.",
+      "Biweekly live breathwork sessions — join from anywhere in the world on our international platform, or in person if you're on the Big Island. Access the full archive of past sessions.",
     href: "/breath-circle",
     cta: "Join the Circle",
     accent: "quantum-cyan",
