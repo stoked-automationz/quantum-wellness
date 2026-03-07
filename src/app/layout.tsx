@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { cinzel, inter, jetbrainsMono } from "@/lib/fonts";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { SacredPause } from "@/components/sacred-pause/sacred-pause";
 import { organizationJsonLd, localBusinessJsonLd } from "@/lib/seo";
 import "./globals.css";
 
@@ -78,6 +79,7 @@ export default function RootLayout({
         <Navbar />
         <main className="min-h-screen pt-16">{children}</main>
         <Footer />
+        <SacredPause />
       </body>
     </html>
   );
