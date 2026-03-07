@@ -64,17 +64,25 @@ const GEOMETRY_RINGS = [
 ];
 
 export function BreathingSession({ onClose }: BreathingSessionProps) {
+  // Start on "inhale" but the orb begins small — we use a separate flag
+  // to ensure the first render is contracted, then we trigger "inhale" expansion
   const [phase, setPhase] = useState<BreathPhase>("inhale");
+  const [orbReady, setOrbReady] = useState(false);
   const [breathCount, setBreathCount] = useState(1);
   const [isActive, setIsActive] = useState(true);
   const [mounted, setMounted] = useState(false);
   const phaseIndexRef = useRef(0);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Mount animation
+  // Mount animation — orb starts contracted, then begins expanding after a brief delay
   useEffect(() => {
-    const t = setTimeout(() => setMounted(true), 50);
-    return () => clearTimeout(t);
+    const mountTimer = setTimeout(() => setMounted(true), 50);
+    // Small delay so the CSS transition catches the contracted→expanded change
+    const orbTimer = setTimeout(() => setOrbReady(true), 150);
+    return () => {
+      clearTimeout(mountTimer);
+      clearTimeout(orbTimer);
+    };
   }, []);
 
   // Breathing state machine
@@ -109,9 +117,8 @@ export function BreathingSession({ onClose }: BreathingSessionProps) {
   }, [onClose]);
 
   // Determine orb scale and geometry scale based on phase
-  const isExpanded = phase === "inhale" || phase === "hold-top";
-  const orbScale = isExpanded ? 1 : 0.4; // 200px expanded / 80px contracted (relative to 200px base)
-  const geometryScale = isExpanded ? 1.3 : 0.7;
+  // Before orbReady, everything stays contracted so the first inhale visually expands
+  const isExpanded = orbReady && (phase === "inhale" || phase === "hold-top");
   const geometryRotation = phase === "inhale" || phase === "hold-top" ? 30 : -30;
 
   return (
