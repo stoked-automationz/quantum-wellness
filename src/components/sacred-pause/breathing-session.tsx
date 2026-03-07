@@ -311,12 +311,13 @@ export function BreathingSession({ onClose }: BreathingSessionProps) {
       `}</style>
 
       <div
-        className={`session-overlay fixed inset-0 z-[60] flex flex-col items-center justify-center overflow-hidden ${
+        className={`session-overlay fixed inset-0 z-[60] flex flex-col items-center justify-center overflow-hidden cursor-pointer ${
           mounted ? "opacity-100" : "opacity-0"
         }`}
         style={{ backgroundColor: "#0A0A0A" }}
         role="dialog"
-        aria-label="Breathing session"
+        aria-label="Breathing session — click anywhere to end"
+        onClick={handleClose}
       >
         {/* ─── Starry Background ─── */}
         <div className="absolute inset-0 overflow-hidden" aria-hidden="true">

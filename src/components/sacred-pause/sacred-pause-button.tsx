@@ -89,25 +89,25 @@ export function SacredPauseButton({ onActivate }: SacredPauseButtonProps) {
       <style>{`
         @keyframes sp-pulse-glow {
           0%, 100% {
-            filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.4))
-                    drop-shadow(0 0 12px rgba(212, 175, 55, 0.15));
+            filter: drop-shadow(0 0 6px rgba(126, 200, 227, 0.3))
+                    drop-shadow(0 0 12px rgba(212, 175, 55, 0.2));
           }
           50% {
-            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.7))
-                    drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
+            filter: drop-shadow(0 0 10px rgba(126, 200, 227, 0.5))
+                    drop-shadow(0 0 20px rgba(212, 175, 55, 0.35));
           }
         }
 
         @keyframes sp-pulse-glow-bright {
           0%, 100% {
-            filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.8))
+            filter: drop-shadow(0 0 12px rgba(126, 200, 227, 0.7))
                     drop-shadow(0 0 24px rgba(212, 175, 55, 0.5))
-                    drop-shadow(0 0 40px rgba(212, 175, 55, 0.2));
+                    drop-shadow(0 0 40px rgba(126, 200, 227, 0.2));
           }
           50% {
-            filter: drop-shadow(0 0 16px rgba(212, 175, 55, 1))
+            filter: drop-shadow(0 0 16px rgba(126, 200, 227, 0.9))
                     drop-shadow(0 0 32px rgba(212, 175, 55, 0.6))
-                    drop-shadow(0 0 48px rgba(212, 175, 55, 0.3));
+                    drop-shadow(0 0 48px rgba(126, 200, 227, 0.3));
           }
         }
 
@@ -351,7 +351,7 @@ export function SacredPauseButton({ onActivate }: SacredPauseButtonProps) {
           }}
           aria-label="Sacred Pause"
         >
-          {/* Diamond / faceted gemstone SVG */}
+          {/* 4-point star / diamond SVG with blue accents */}
           <svg
             viewBox="0 0 100 100"
             width="44"
@@ -367,25 +367,24 @@ export function SacredPauseButton({ onActivate }: SacredPauseButtonProps) {
                 x2="100%"
                 y2="100%"
               >
-                <stop offset="0%" stopColor="#F0D060" />
-                <stop offset="30%" stopColor="#D4AF37" />
-                <stop offset="70%" stopColor="#B8962E" />
-                <stop offset="100%" stopColor="#D4AF37" />
+                <stop offset="0%" stopColor="#7EC8E3" />
+                <stop offset="25%" stopColor="#D4AF37" />
+                <stop offset="50%" stopColor="#F0D060" />
+                <stop offset="75%" stopColor="#D4AF37" />
+                <stop offset="100%" stopColor="#7EC8E3" />
               </linearGradient>
-              <linearGradient
-                id="sp-diamond-inner"
-                x1="30%"
-                y1="20%"
-                x2="70%"
-                y2="80%"
+              <radialGradient
+                id="sp-diamond-center"
+                cx="50%"
+                cy="50%"
+                r="35%"
               >
-                <stop offset="0%" stopColor="rgba(255,255,255,0.15)" />
-                <stop offset="50%" stopColor="rgba(255,255,255,0)" />
-                <stop offset="100%" stopColor="rgba(255,255,255,0.08)" />
-              </linearGradient>
+                <stop offset="0%" stopColor="rgba(255,255,255,0.25)" />
+                <stop offset="100%" stopColor="rgba(255,255,255,0)" />
+              </radialGradient>
               <filter id="sp-inner-glow">
                 <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur" />
-                <feFlood floodColor="#D4AF37" floodOpacity="0.5" />
+                <feFlood floodColor="#7EC8E3" floodOpacity="0.4" />
                 <feComposite in2="blur" operator="in" />
                 <feMerge>
                   <feMergeNode />
@@ -394,58 +393,28 @@ export function SacredPauseButton({ onActivate }: SacredPauseButtonProps) {
               </filter>
             </defs>
 
-            {/* 8-point starburst diamond shape */}
+            {/* 4-point star: top, right, bottom, left with pinched center */}
             <polygon
-              points="
-                50,2
-                61,30
-                98,35
-                68,56
-                78,98
-                50,74
-                22,98
-                32,56
-                2,35
-                39,30
-              "
+              points="50,2 58,38 98,50 58,62 50,98 42,62 2,50 42,38"
               fill="url(#sp-diamond-grad)"
               filter="url(#sp-inner-glow)"
-              stroke="rgba(240,208,96,0.5)"
+              stroke="rgba(126,200,227,0.5)"
               strokeWidth="0.5"
             />
 
-            {/* Inner facet lines for gemstone effect */}
-            <polygon
-              points="
-                50,2
-                61,30
-                98,35
-                68,56
-                78,98
-                50,74
-                22,98
-                32,56
-                2,35
-                39,30
-              "
-              fill="url(#sp-diamond-inner)"
-              stroke="none"
+            {/* Center glow */}
+            <circle
+              cx="50"
+              cy="50"
+              r="16"
+              fill="url(#sp-diamond-center)"
             />
 
-            {/* Center facet detail */}
-            <polygon
-              points="50,24 64,42 58,62 42,62 36,42"
-              fill="rgba(255,255,255,0.06)"
-              stroke="rgba(240,208,96,0.15)"
-              strokeWidth="0.5"
-            />
-
-            {/* Top facet highlight */}
-            <polygon
-              points="50,2 61,30 50,24 39,30"
-              fill="rgba(255,255,255,0.1)"
-              stroke="none"
-            />
+            {/* Inner facet lines */}
+            <line x1="50" y1="2" x2="50" y2="98" stroke="rgba(212,175,55,0.12)" strokeWidth="0.5" />
+            <line x1="2" y1="50" x2="98" y2="50" stroke="rgba(212,175,55,0.12)" strokeWidth="0.5" />
+            <line x1="42" y1="38" x2="58" y2="62" stroke="rgba(126,200,227,0.15)" strokeWidth="0.5" />
+            <line x1="58" y1="38" x2="42" y2="62" stroke="rgba(126,200,227,0.15)" strokeWidth="0.5" />
           </svg>
         </button>
       </div>
